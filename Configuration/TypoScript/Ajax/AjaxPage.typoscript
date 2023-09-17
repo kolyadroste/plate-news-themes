@@ -1,0 +1,34 @@
+lib.getContentElement = COA
+lib.getContentElement{
+  10 = RECORDS
+  10{
+    tables=tt_content
+    source.field = uid
+    dontCheckPid = 1
+  }
+}
+
+ajaxNews = PAGE
+ajaxNews{
+  typeNum = 1671773225
+  config{
+    disableAllHeaderCode = 1
+    disableBodyTag = 1
+    additionalHeaders.10.header = Content-type: text/html;charset=utf-8
+    admPanel = 0
+    debug = 0
+    no_cache = 1
+  }
+
+  10 = FLUIDTEMPLATE
+  10 {
+    templateName = AjaxRequest
+    templateRootPaths {
+      20 = EXT:plate_news_themes/Resources/Private/Ajax/
+    }
+    variables {
+      contentId = TEXT
+      contentId.data= GP:tx_news_pi1|contentId
+    }
+  }
+}

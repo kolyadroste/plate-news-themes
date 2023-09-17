@@ -1,0 +1,30 @@
+
+// Change ContentElement List (FSC Uses it for plugins), remove wrapper html when ajax is acitve
+lib.contentElement {
+    layoutRootPaths {
+        1686727164 = EXT:plate_news_themes/Resources/Private/ContentElements/Layouts/
+
+    }
+}
+
+
+plugin.tx_news {
+    view {
+        templateRootPaths {
+            1686240424 = EXT:plate_news_themes/Resources/Private/Templates/
+        }
+
+        partialRootPaths {
+            1686240420 = EXT:plate_partials/Resources/Private/Partials/
+            1686240424 = EXT:plate_news_themes/Resources/Private/Partials/
+        }
+
+        layoutRootPaths {
+            1686240424 = EXT:plate_news_themes/Resources/Private/Layouts/
+        }
+
+        widget.GeorgRinger\News\ViewHelpers\Widget\PaginateViewHelper.templateRootPath = EXT:news/Resources/Private/Templates/
+    }
+}
+
+@import './Ajax/AjaxPage.typoscript'
